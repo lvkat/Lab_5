@@ -90,7 +90,7 @@ namespace Lab_5
             return flag;
         }
 
-        private void clearValues()
+        private void ClearValues()
         {
             foreach (var textBox in TextBoxes)
                 textBox.Clear();
@@ -112,16 +112,39 @@ namespace Lab_5
                 utensil = creators[resultType].CreateUtensil(values);
                 mainList.Add(utensil);
                 listBoxItems.Items.Add(utensil.Name);
-                clearValues();
+                ClearValues();
             }
             else
                 MessageBox.Show("Не все поля заполнены!");
             //добавление элемента в список
         }
 
+        private void HideProperties()
+        {
+            foreach (var label in Labels)
+                label.Visible = false;
+            foreach (var textBox in TextBoxes)
+                textBox.Visible = false;
+        }
+
+        private void SetPropertyNames(List<string> values)
+        {
+            int index = 0;
+            foreach (var value in values)
+            {
+                Labels[index].Text = value;
+                Labels[index].Visible = true;
+                TextBoxes[index++].Visible = true;
+            }
+        }
+
         private void button_Click(object sender, EventArgs e)
         {
+            HideProperties();
+            ClearValues();
             resultType = buttonsDict[(Button)sender];
+            var propertyNames = creators[resultType].GetPropertyNames();
+            SetPropertyNames(propertyNames);
         }
     }
 }
