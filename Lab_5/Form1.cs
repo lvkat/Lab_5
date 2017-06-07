@@ -194,5 +194,20 @@ namespace Lab_5
             listBoxItems.Items.RemoveAt(listBoxItems.SelectedIndex);
             ClearValues();
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            if (CheckEmptyList()) 
+            {
+                if (CheckEmptyTextBoxes())
+                {
+                    var values = GetPropertyValues();
+                    creators[mainList[listBoxItems.SelectedIndex].GetType()].SetProperties(mainList[listBoxItems.SelectedIndex], values);
+                }
+                else
+                    MessageBox.Show("Не все поля заполнены!");
+
+            }
+        }
     }
 }
