@@ -8,7 +8,7 @@ namespace Lab_5.Utensils
 {
     class Tureen : Utensil
     {
-        public bool IsWithLadle { get; set; }
-        public string Shape { get; set; }       //combobox (круглая/фигурная и т.п.)
+        public int HaftCount { get; set; }
+        public string Shape { get; set; }       
     }
 }

@@ -9,6 +9,6 @@ namespace Lab_5.Utensils
     class Steamer : Pan
     {
         public int Capasity { get; set; }
-        public int ConteinersCout { get; set; }
+        public int ContainersCout { get; set; }
     }
 }

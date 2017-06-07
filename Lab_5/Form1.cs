@@ -20,6 +20,7 @@ namespace Lab_5
         Dictionary<Button, Type> buttonsDict;
         Dictionary<Type, BaseUtensilCreator> creators;
         Type resultType;
+        bool flag = true;
 
         public Form1()
         {
@@ -28,24 +29,25 @@ namespace Lab_5
             LoadButtonsDict();
             LoadLabels();
             LoadTextBoxes();
+            HideProperties();
         }
 
         private void LoadCreators()
         {
             creators = new Dictionary<Type, BaseUtensilCreator>();
             creators[typeof(Cup)] = new CupCreator();
-            /*creators[typeof(Pan)] = new CreatePan();
-            creators[typeof(Stewpan)] = new CreateStewpan();
-            creators[typeof(Plate)] = new CreatePlate();*/
+            creators[typeof(Pan)] = new PanCreator();
+            creators[typeof(Steamer)] = new SteamerCreator();
+            creators[typeof(Tureen)] = new TureenCreator();
         }
 
         private void LoadButtonsDict()
         {
             buttonsDict = new Dictionary<Button, Type>();
             buttonsDict[buttonCup] = typeof(Cup);
-            /*buttonsDict[btnPan] = typeof(Pan);
-            buttonsDict[btnStewpan] = typeof(Stewpan);
-            buttonsDict[btnGlass] = typeof(Glass);*/
+            buttonsDict[buttonPan] = typeof(Pan);
+            buttonsDict[buttonSteamer] = typeof(Steamer);
+            buttonsDict[buttonTureen] = typeof(Tureen);
         }
 
         private void LoadLabels()
@@ -59,7 +61,6 @@ namespace Lab_5
             Labels.Add(label5);
             Labels.Add(label6);
             Labels.Add(label7);
-            Labels.Add(label8);
         }
 
         private void LoadTextBoxes()
@@ -73,7 +74,6 @@ namespace Lab_5
             TextBoxes.Add(textBox5);
             TextBoxes.Add(textBox6);
             TextBoxes.Add(textBox7);
-            TextBoxes.Add(textBox8);
         }
 
         private bool CheckEmptyTextBoxes()
@@ -145,6 +145,54 @@ namespace Lab_5
             resultType = buttonsDict[(Button)sender];
             var propertyNames = creators[resultType].GetPropertyNames();
             SetPropertyNames(propertyNames);
+        }
+
+        private bool CheckEmptyList()
+        {
+            if (listBoxItems.SelectedIndex == -1) return false;
+            else return true;
+        }
+
+        private void SetPropertyValues(List<string> values)
+        {
+            int index = 0;
+            foreach (var value in values)
+            {
+                TextBoxes[index++].Text = value;
+            }
+        }
+
+        private void listBoxItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CheckEmptyList())
+            {
+                if (flag)
+                {
+                    HideProperties();
+                    string nameType = mainList[listBoxItems.SelectedIndex].GetType().Name;
+                    foreach (Type t in creators.Keys)
+                    {
+                        if (t.Name == nameType)
+                        {
+                            var propertyNames = creators[t].GetPropertyNames();
+                            var propertyValues = creators[t].GetProperties(mainList[listBoxItems.SelectedIndex]);
+                            SetPropertyNames(propertyNames);
+                            SetPropertyValues(propertyValues);
+                        }
+                    }
+                }
+                else flag = true;
+            }
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            Utensil temp = mainList[listBoxItems.SelectedIndex];
+
+            mainList.Remove(temp);
+            flag = false;
+            listBoxItems.Items.RemoveAt(listBoxItems.SelectedIndex);
+            ClearValues();
         }
     }
 }
