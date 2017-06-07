@@ -10,6 +10,5 @@ namespace Lab_5.Utensils
     {
         public int Diameter { get; set; }
         public string CoverType { get; set; }
-        public int HalfCount { get; set; }
     }
 }

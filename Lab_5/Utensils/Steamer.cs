@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_5.Utensils
 {
-    class Sreamer : Pan
+    class Steamer : Pan
     {
         public int Capasity { get; set; }
         public int ConteinersCout { get; set; }
