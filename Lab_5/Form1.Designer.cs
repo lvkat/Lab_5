@@ -52,6 +52,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.openFileDialogSr = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // listBoxItems
@@ -101,6 +102,7 @@
             this.buttonSerialize.TabIndex = 4;
             this.buttonSerialize.Text = "Сериализовать ";
             this.buttonSerialize.UseVisualStyleBackColor = true;
+            this.buttonSerialize.Click += new System.EventHandler(this.buttonSerialize_Click);
             // 
             // buttonDeserialize
             // 
@@ -110,6 +112,7 @@
             this.buttonDeserialize.TabIndex = 5;
             this.buttonDeserialize.Text = "Десериализовать ";
             this.buttonDeserialize.UseVisualStyleBackColor = true;
+            this.buttonDeserialize.Click += new System.EventHandler(this.buttonDesirialized_Click);
             // 
             // buttonTureen
             // 
@@ -263,6 +266,10 @@
             this.textBox7.Size = new System.Drawing.Size(125, 20);
             this.textBox7.TabIndex = 22;
             // 
+            // openFileDialogSr
+            // 
+            this.openFileDialogSr.FileName = "openFileDialogSr";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +332,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.OpenFileDialog openFileDialogSr;
     }
 }
 

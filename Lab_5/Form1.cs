@@ -116,7 +116,6 @@ namespace Lab_5
             }
             else
                 MessageBox.Show("Не все поля заполнены!");
-            //добавление элемента в список
         }
 
         private void HideProperties()
@@ -207,6 +206,40 @@ namespace Lab_5
                 else
                     MessageBox.Show("Не все поля заполнены!");
 
+            }
+        }
+
+        private void buttonSerialize_Click(object sender, EventArgs e)
+
+        {
+            if (this.listBoxItems.Items.Count != 0)
+            {
+                Serializer serializer = new Serializer();
+                this.openFileDialogSr.Title = "Выберите файл";
+                if (openFileDialogSr.ShowDialog() != DialogResult.OK) return;
+                if (openFileDialogSr.FileName != string.Empty)
+                    serializer.Serialize(openFileDialogSr.FileName, mainList);
+                MessageBox.Show("Сериализация выполнена");
+
+            }
+            else
+                MessageBox.Show("Нечего сериализовать :(");
+        }
+
+        private void buttonDesirialized_Click(object sender, EventArgs e)
+        {
+            Serializer deserializer = new Serializer();
+            List<Utensil> deserilizeList = new List<Utensil>();
+
+            this.openFileDialogSr.Title = "Выберите файл";
+            if (openFileDialogSr.ShowDialog() != DialogResult.OK) return;
+            if (openFileDialogSr.FileName != string.Empty)
+                deserilizeList = deserializer.Deserialize(openFileDialogSr.FileName);
+
+            foreach (Utensil ut in deserilizeList)
+            {
+                listBoxItems.Items.Add(ut.Name);
+                mainList.Add(ut);
             }
         }
     }
