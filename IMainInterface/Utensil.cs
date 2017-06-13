@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization;
 
-namespace Lab_5.Utensils
+namespace IMainInterface
 {
     [DataContract]
-    class Utensil
+    public class Utensil
     {
         [DataMember] 
         public string Color { get; set; }

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lab_5.Utensils;
+using IMainInterface;
+using Serialiser;
+using System.Reflection;
 
 namespace Lab_5
 {
@@ -19,8 +22,21 @@ namespace Lab_5
         Utensil utensil;
         Dictionary<Button, Type> buttonsDict;
         Dictionary<Type, BaseUtensilCreator> creators;
+        ISerialiser serialiser = new JSONSerializer();
         Type resultType;
         bool flag = true;
+        Dictionary<string, ISerialiser> serialiserDict = new Dictionary<string, ISerialiser>()
+        {
+            { "json", new JSONSerializer() }
+        };
+        public Type[] types = new Type[]
+        {
+            typeof(Cup),
+            typeof(Pan),
+            typeof(Steamer),
+            typeof(Tureen)
+        };
+
 
         public Form1()
         {
@@ -214,11 +230,10 @@ namespace Lab_5
         {
             if (this.listBoxItems.Items.Count != 0)
             {
-                Serializer serializer = new Serializer();
                 this.openFileDialogSr.Title = "Выберите файл";
                 if (openFileDialogSr.ShowDialog() != DialogResult.OK) return;
                 if (openFileDialogSr.FileName != string.Empty)
-                    serializer.Serialize(openFileDialogSr.FileName, mainList);
+                    serialiser.Serialize(openFileDialogSr.FileName, mainList, types);
                 MessageBox.Show("Сериализация выполнена");
 
             }
@@ -228,19 +243,53 @@ namespace Lab_5
 
         private void buttonDesirialized_Click(object sender, EventArgs e)
         {
-            Serializer deserializer = new Serializer();
             List<Utensil> deserilizeList = new List<Utensil>();
 
             this.openFileDialogSr.Title = "Выберите файл";
             if (openFileDialogSr.ShowDialog() != DialogResult.OK) return;
             if (openFileDialogSr.FileName != string.Empty)
-                deserilizeList = deserializer.Deserialize(openFileDialogSr.FileName);
+                deserilizeList = serialiser.Deserialize(openFileDialogSr.FileName, types);
 
             foreach (Utensil ut in deserilizeList)
             {
                 listBoxItems.Items.Add(ut.Name);
                 mainList.Add(ut);
             }
+        }
+
+        private List<Type> GetTypes<T>(Assembly assembly)
+        {
+            if (!typeof(T).IsInterface) return null;
+            return assembly.GetTypes().
+                Where(x => x.GetInterface(typeof(T).Name) != null)
+                .ToList();
+        }
+
+        private void buttonAddPlugin_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "DLL files | *.dll";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Assembly mainAssembly = Assembly.LoadFrom(dlg.FileName);
+                List<Type> pluginTypes = GetTypes<IPlugin>(mainAssembly);
+                if (pluginTypes.Count != 0)
+                {
+                    foreach (Type item in pluginTypes)
+                    {
+                        IPlugin plugin = Activator.CreateInstance(item) as IPlugin;
+                        serialiserDict.Add(plugin.GetExt(), plugin.GetSerialiser());
+                    }
+                }
+                checkBoxExt.Visible = Visible;
+            }
+        }
+
+        private void checkBoxExt_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxExt.Checked) { serialiser = serialiserDict["xml"]; }
+            else serialiser = serialiserDict["json"];
+
         }
     }
 }

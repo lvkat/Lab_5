@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lab_5.Utensils;
 using System.Runtime.Serialization.Json;
 using System.IO;
+using IMainInterface;
+using Serialiser;
 
 namespace Lab_5
 {
-    class Serializer
+    class JSONSerializer : ISerialiser
     {
-
-        public void Serialize(string fn, List<Utensil> list)
+        public void Serialize(string fn, List<Utensil> list, Type[] types)
         {
-            DataContractJsonSerializer formatter = new DataContractJsonSerializer(typeof(List<Utensil>), new List<Type> { typeof(Cup), typeof(Pan), typeof(Steamer), typeof(Tureen) });
+            DataContractJsonSerializer formatter = new DataContractJsonSerializer(typeof(List<Utensil>), types);
             using (FileStream fs = new FileStream(fn, FileMode.OpenOrCreate))
             {
                 formatter.WriteObject(fs, list);
             }
         }
 
-        public List<Utensil> Deserialize(string fn)
+        public List<Utensil> Deserialize(string fn, Type[] types)
         {
-            DataContractJsonSerializer formatter = new DataContractJsonSerializer(typeof(List<Utensil>), new List<Type> { typeof(Cup), typeof(Pan), typeof(Steamer), typeof(Tureen) });
+            DataContractJsonSerializer formatter = new DataContractJsonSerializer(typeof(List<Utensil>), types);
 
             using (FileStream fs = new FileStream(fn, FileMode.Open))
             {

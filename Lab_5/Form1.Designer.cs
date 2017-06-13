@@ -53,6 +53,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.openFileDialogSr = new System.Windows.Forms.OpenFileDialog();
+            this.buttonAddPlugin = new System.Windows.Forms.Button();
+            this.checkBoxExt = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // listBoxItems
@@ -270,11 +272,35 @@
             // 
             this.openFileDialogSr.FileName = "openFileDialogSr";
             // 
+            // buttonAddPlugin
+            // 
+            this.buttonAddPlugin.Location = new System.Drawing.Point(245, 304);
+            this.buttonAddPlugin.Name = "buttonAddPlugin";
+            this.buttonAddPlugin.Size = new System.Drawing.Size(37, 55);
+            this.buttonAddPlugin.TabIndex = 24;
+            this.buttonAddPlugin.Text = "button1";
+            this.buttonAddPlugin.UseVisualStyleBackColor = true;
+            this.buttonAddPlugin.Click += new System.EventHandler(this.buttonAddPlugin_Click);
+            // 
+            // checkBoxExt
+            // 
+            this.checkBoxExt.AutoSize = true;
+            this.checkBoxExt.Location = new System.Drawing.Point(70, 362);
+            this.checkBoxExt.Name = "checkBoxExt";
+            this.checkBoxExt.Size = new System.Drawing.Size(80, 17);
+            this.checkBoxExt.TabIndex = 25;
+            this.checkBoxExt.Text = "checkBox1";
+            this.checkBoxExt.UseVisualStyleBackColor = true;
+            this.checkBoxExt.Visible = false;
+            this.checkBoxExt.CheckedChanged += new System.EventHandler(this.checkBoxExt_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 389);
+            this.Controls.Add(this.checkBoxExt);
+            this.Controls.Add(this.buttonAddPlugin);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label6);
@@ -333,6 +359,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.OpenFileDialog openFileDialogSr;
+        private System.Windows.Forms.Button buttonAddPlugin;
+        private System.Windows.Forms.CheckBox checkBoxExt;
     }
 }
 
