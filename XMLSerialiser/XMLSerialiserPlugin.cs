@@ -7,9 +7,9 @@ using Serialiser;
 
 namespace XMLSerialiser
 {
-    public class IXMLSerialiserPlugin : IPlugin
+    public class XMLSerialiserPlugin : IPlugin
     {
-        private MyXMLSerialiser serialiser = new MyXMLSerialiser();
+        private XMLSerialiser serialiser = new XMLSerialiser();
         private string ext = "xml";
 
         public string GetExt()

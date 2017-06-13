@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 namespace Lab_5.Utensils
 {
     [DataContract]
-    class Steamer : Pan
+    public class Steamer : Pan
     {
         [DataMember]
         public int Capasity { get; set; }

@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace XMLSerialiser
 {
-    public class MyXMLSerialiser : ISerialiser
+    public class XMLSerialiser : ISerialiser
     {
         public List<Utensil> Deserialize(string fn, Type[] types)
         {

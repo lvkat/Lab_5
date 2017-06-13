@@ -10,7 +10,7 @@ using IMainInterface;
 namespace Lab_5.Utensils
 {
     [DataContract]
-    class Cup : Utensil
+     public class Cup : Utensil
     {
         [DataMember]
         public int HaftCount { get; set; }

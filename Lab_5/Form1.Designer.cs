@@ -62,13 +62,13 @@
             this.listBoxItems.FormattingEnabled = true;
             this.listBoxItems.Location = new System.Drawing.Point(12, 12);
             this.listBoxItems.Name = "listBoxItems";
-            this.listBoxItems.Size = new System.Drawing.Size(114, 108);
+            this.listBoxItems.Size = new System.Drawing.Size(114, 173);
             this.listBoxItems.TabIndex = 0;
             this.listBoxItems.SelectedIndexChanged += new System.EventHandler(this.listBoxItems_SelectedIndexChanged);
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(70, 135);
+            this.buttonAdd.Location = new System.Drawing.Point(146, 135);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(148, 31);
             this.buttonAdd.TabIndex = 1;
@@ -78,7 +78,7 @@
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(70, 184);
+            this.buttonEdit.Location = new System.Drawing.Point(146, 184);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(148, 31);
             this.buttonEdit.TabIndex = 2;
@@ -88,7 +88,7 @@
             // 
             // buttonRemove
             // 
-            this.buttonRemove.Location = new System.Drawing.Point(70, 230);
+            this.buttonRemove.Location = new System.Drawing.Point(146, 230);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(148, 31);
             this.buttonRemove.TabIndex = 3;
@@ -98,7 +98,7 @@
             // 
             // buttonSerialize
             // 
-            this.buttonSerialize.Location = new System.Drawing.Point(70, 278);
+            this.buttonSerialize.Location = new System.Drawing.Point(146, 278);
             this.buttonSerialize.Name = "buttonSerialize";
             this.buttonSerialize.Size = new System.Drawing.Size(148, 31);
             this.buttonSerialize.TabIndex = 4;
@@ -108,7 +108,7 @@
             // 
             // buttonDeserialize
             // 
-            this.buttonDeserialize.Location = new System.Drawing.Point(70, 325);
+            this.buttonDeserialize.Location = new System.Drawing.Point(146, 325);
             this.buttonDeserialize.Name = "buttonDeserialize";
             this.buttonDeserialize.Size = new System.Drawing.Size(148, 31);
             this.buttonDeserialize.TabIndex = 5;
@@ -118,42 +118,46 @@
             // 
             // buttonTureen
             // 
-            this.buttonTureen.Location = new System.Drawing.Point(170, 96);
+            this.buttonTureen.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonTureen.Location = new System.Drawing.Point(146, 96);
             this.buttonTureen.Name = "buttonTureen";
-            this.buttonTureen.Size = new System.Drawing.Size(124, 22);
+            this.buttonTureen.Size = new System.Drawing.Size(148, 22);
             this.buttonTureen.TabIndex = 9;
             this.buttonTureen.Text = "Супница";
-            this.buttonTureen.UseVisualStyleBackColor = true;
+            this.buttonTureen.UseVisualStyleBackColor = false;
             this.buttonTureen.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonSteamer
             // 
-            this.buttonSteamer.Location = new System.Drawing.Point(170, 68);
+            this.buttonSteamer.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonSteamer.Location = new System.Drawing.Point(146, 68);
             this.buttonSteamer.Name = "buttonSteamer";
-            this.buttonSteamer.Size = new System.Drawing.Size(124, 22);
+            this.buttonSteamer.Size = new System.Drawing.Size(148, 22);
             this.buttonSteamer.TabIndex = 8;
             this.buttonSteamer.Text = "Пароварка";
-            this.buttonSteamer.UseVisualStyleBackColor = true;
+            this.buttonSteamer.UseVisualStyleBackColor = false;
             this.buttonSteamer.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonPan
             // 
-            this.buttonPan.Location = new System.Drawing.Point(170, 40);
+            this.buttonPan.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonPan.Location = new System.Drawing.Point(146, 40);
             this.buttonPan.Name = "buttonPan";
-            this.buttonPan.Size = new System.Drawing.Size(124, 22);
+            this.buttonPan.Size = new System.Drawing.Size(148, 22);
             this.buttonPan.TabIndex = 7;
             this.buttonPan.Text = "Сковорода";
-            this.buttonPan.UseVisualStyleBackColor = true;
+            this.buttonPan.UseVisualStyleBackColor = false;
             this.buttonPan.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonCup
             // 
-            this.buttonCup.Location = new System.Drawing.Point(170, 12);
+            this.buttonCup.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonCup.Location = new System.Drawing.Point(146, 12);
             this.buttonCup.Name = "buttonCup";
-            this.buttonCup.Size = new System.Drawing.Size(124, 22);
+            this.buttonCup.Size = new System.Drawing.Size(148, 22);
             this.buttonCup.TabIndex = 6;
             this.buttonCup.Text = "Кружка";
-            this.buttonCup.UseVisualStyleBackColor = true;
+            this.buttonCup.UseVisualStyleBackColor = false;
             this.buttonCup.Click += new System.EventHandler(this.button_Click);
             // 
             // textBox1
@@ -274,22 +278,23 @@
             // 
             // buttonAddPlugin
             // 
-            this.buttonAddPlugin.Location = new System.Drawing.Point(245, 304);
+            this.buttonAddPlugin.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonAddPlugin.Location = new System.Drawing.Point(12, 325);
             this.buttonAddPlugin.Name = "buttonAddPlugin";
-            this.buttonAddPlugin.Size = new System.Drawing.Size(37, 55);
+            this.buttonAddPlugin.Size = new System.Drawing.Size(114, 54);
             this.buttonAddPlugin.TabIndex = 24;
-            this.buttonAddPlugin.Text = "button1";
-            this.buttonAddPlugin.UseVisualStyleBackColor = true;
+            this.buttonAddPlugin.Text = "+ PLG";
+            this.buttonAddPlugin.UseVisualStyleBackColor = false;
             this.buttonAddPlugin.Click += new System.EventHandler(this.buttonAddPlugin_Click);
             // 
             // checkBoxExt
             // 
             this.checkBoxExt.AutoSize = true;
-            this.checkBoxExt.Location = new System.Drawing.Point(70, 362);
+            this.checkBoxExt.Location = new System.Drawing.Point(146, 362);
             this.checkBoxExt.Name = "checkBoxExt";
-            this.checkBoxExt.Size = new System.Drawing.Size(80, 17);
+            this.checkBoxExt.Size = new System.Drawing.Size(137, 17);
             this.checkBoxExt.TabIndex = 25;
-            this.checkBoxExt.Text = "checkBox1";
+            this.checkBoxExt.Text = "Использовать плагин";
             this.checkBoxExt.UseVisualStyleBackColor = true;
             this.checkBoxExt.Visible = false;
             this.checkBoxExt.CheckedChanged += new System.EventHandler(this.checkBoxExt_CheckedChanged);

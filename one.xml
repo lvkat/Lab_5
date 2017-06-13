@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ArrayOfUtensil xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Utensil xsi:type="Cup">
+    <Color>q</Color>
+    <Material>w</Material>
+    <Fabricator>w</Fabricator>
+    <Name>Кружка</Name>
+    <HaftCount>1</HaftCount>
+  </Utensil>
+</ArrayOfUtensil>

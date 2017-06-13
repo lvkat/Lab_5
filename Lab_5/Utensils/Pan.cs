@@ -10,7 +10,7 @@ using IMainInterface;
 namespace Lab_5.Utensils
 {
     [DataContract]
-    class Pan : Utensil
+    public class Pan : Utensil
     {
         [DataMember]
         public int Diameter { get; set; }

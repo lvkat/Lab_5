@@ -47,7 +47,7 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IXMLSerialiserPlugin.cs" />
+    <Compile Include="XMLSerialiserPlugin.cs" />
     <Compile Include="XMLSerialiser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

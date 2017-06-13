@@ -10,7 +10,7 @@ using IMainInterface;
 namespace Lab_5.Utensils
 {
     [DataContract]
-    class Tureen : Utensil
+    public class Tureen : Utensil
     {
         [DataMember]
         public int HaftCount { get; set; }

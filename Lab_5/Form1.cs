@@ -289,7 +289,6 @@ namespace Lab_5
         {
             if (checkBoxExt.Checked) { serialiser = serialiserDict["xml"]; }
             else serialiser = serialiserDict["json"];
-
         }
     }
 }
