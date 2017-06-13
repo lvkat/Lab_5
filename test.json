@@ -1,1 +1,1 @@
-[{"__type":"Cup:#Lab_5.Utensils","Color":"www","Fabricator":"www","Material":"www","Name":"Кружка","HaftCount":5},{"__type":"Pan:#Lab_5.Utensils","Color":"aaa","Fabricator":"aaa","Material":"aaaa","Name":"Сковорода","CoverType":"aaa","Diameter":3}]
+[{"__type":"Cup:#Lab_5.Utensils","Color":"1","Fabricator":"1","Material":"1","Name":"Кружка","HaftCount":1},{"__type":"Pan:#Lab_5.Utensils","Color":"2","Fabricator":"2","Material":"2","Name":"Сковорода","CoverType":"2","Diameter":2}]

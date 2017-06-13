@@ -11,7 +11,7 @@ namespace IMainInterface
     [DataContract]
     public class Utensil
     {
-        [DataMember] 
+        [DataMember]
         public string Color { get; set; }
         [DataMember]
         public string Material { get; set; }

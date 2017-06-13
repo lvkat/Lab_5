@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ArrayOfUtensil xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Utensil xsi:type="Cup">
+    <Color>1</Color>
+    <Material>1</Material>
+    <Fabricator>1</Fabricator>
+    <Name>Кружка</Name>
+    <HaftCount>1</HaftCount>
+  </Utensil>
+  <Utensil xsi:type="Pan">
+    <Color>2</Color>
+    <Material>2</Material>
+    <Fabricator>2</Fabricator>
+    <Name>Сковорода</Name>
+    <Diameter>2</Diameter>
+    <CoverType>2</CoverType>
+  </Utensil>
+</ArrayOfUtensil>

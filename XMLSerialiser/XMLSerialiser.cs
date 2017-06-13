@@ -14,7 +14,7 @@ namespace XMLSerialiser
     {
         public List<Utensil> Deserialize(string fn, Type[] types)
         {
-            XmlSerializer serialiser = new XmlSerializer(typeof(Utensil), types);
+            XmlSerializer serialiser = new XmlSerializer(typeof(List<Utensil>), types);
             using (FileStream fs = new FileStream(fn, FileMode.Open))
             {
                 return (List<Utensil>)serialiser.Deserialize(fs);
@@ -23,7 +23,7 @@ namespace XMLSerialiser
 
         public void Serialize(string fn, List<Utensil> list, Type[] types)
         {
-            XmlSerializer serialiser = new XmlSerializer(typeof(Utensil), types);
+            XmlSerializer serialiser = new XmlSerializer(typeof(List<Utensil>), types);
             using (FileStream fs = new FileStream(fn, FileMode.OpenOrCreate))
             {
                 serialiser.Serialize(fs, list);

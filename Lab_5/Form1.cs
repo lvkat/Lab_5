@@ -29,7 +29,7 @@ namespace Lab_5
         {
             { "json", new JSONSerializer() }
         };
-        public Type[] types = new Type[]
+        private Type[] types = new Type[]
         {
             typeof(Cup),
             typeof(Pan),
